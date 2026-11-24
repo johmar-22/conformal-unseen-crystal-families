@@ -1,0 +1,112 @@
+{
+  "created_utc": "2026-11-18T05:31:32Z",
+  "config_hash": "9441c066c3dfefcc8580ed6bb05954f5a61e84596ebdc05cf873bc1592026351",
+  "code_hash": "e2b26efc5edb3aba2ae57319f1093daf351df882ba3f3a35907b60b50f11893f",
+  "pymatgen_version": "2026.10.31",
+  "jarvis_tools_urls": "jarvis-tools not installed (not needed: the figshare files are read directly)",
+  "releases": [
+    {
+      "name": "dft_3d",
+      "file": "jdft_3d-9-24-2025.json",
+      "url": "https://ndownloader.figshare.com/files/64391379",
+      "path": "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase06_v1/inputs/jdft_3d-9-24-2025.json.zip",
+      "bytes": 48447610,
+      "sha256": "f9e0a3309f0000d5de1ec9e49c93963109ea45e63f451103f8f6595d2eabf7f5",
+      "n_entries": 93902,
+      "n_formula_field_disagrees_with_atoms": 0
+    },
+    {
+      "name": "dft_3d_2022",
+      "file": "jdft_3d-12-12-2022.json",
+      "url": "https://ndownloader.figshare.com/files/38521619",
+      "path": "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase06_v1/inputs/jdft_3d-12-12-2022.json.zip",
+      "bytes": 40811489,
+      "sha256": "d4c64660e9e1fa45c82bd8868a96ec10162195eed69636445972c05550d8d0d6",
+      "n_entries": 75993,
+      "n_formula_field_disagrees_with_atoms": 0
+    }
+  ],
+  "audit_settings": {
+    "min_group_size": 200,
+    "size_grid": [
+      100,
+      150,
+      200,
+      300,
+      500
+    ],
+    "min_groups_for_oxides": 20,
+    "min_calibration_groups": 10,
+    "oxide_rule_primary": "oxidation_state",
+    "other_anion_formers": [
+      "H",
+      "C",
+      "N",
+      "F",
+      "P",
+      "S",
+      "Cl",
+      "As",
+      "Se",
+      "Br",
+      "Te",
+      "I",
+      "At",
+      "He",
+      "Ne",
+      "Ar",
+      "Kr",
+      "Xe",
+      "Rn"
+    ],
+    "decision_requires_both_oxide_rules": true,
+    "dedup_keys": [
+      "reduced_formula",
+      "spg_number"
+    ]
+  },
+  "decision": {
+    "release": "dft_3d",
+    "rule": "oxides primary only if K >= 20 under both oxide rules",
+    "K": {
+      "oxides_oxidation_rule": 19,
+      "oxides_element_rule": 22,
+      "all_chemistries": 59
+    },
+    "oxide_definition_flips_the_decision": true,
+    "primary_scope": "all_chemistries",
+    "secondary_scope": "oxides_oxidation_rule",
+    "K_primary": 59,
+    "K_secondary": 19,
+    "h3_design_primary": "valid group-level split (>= 10 calibration groups + 49 training groups)",
+    "h3_design_secondary": "group-level jackknife+ only (Lee et al. 2023; fewer than 20 eligible groups)",
+    "tbmbj_primary": {
+      "n": 19877,
+      "K_eligible": 24
+    }
+  },
+  "decision_compare_releases": {
+    "dft_3d_2022": {
+      "release": "dft_3d_2022",
+      "rule": "oxides primary only if K >= 20 under both oxide rules",
+      "K": {
+        "oxides_oxidation_rule": 17,
+        "oxides_element_rule": 15,
+        "all_chemistries": 55
+      },
+      "oxide_definition_flips_the_decision": false,
+      "primary_scope": "all_chemistries",
+      "secondary_scope": "oxides_oxidation_rule",
+      "K_primary": 55,
+      "K_secondary": 17,
+      "h3_design_primary": "valid group-level split (>= 10 calibration groups + 45 training groups)",
+      "h3_design_secondary": "group-level jackknife+ only (Lee et al. 2023; fewer than 20 eligible groups)",
+      "tbmbj_primary": {
+        "n": 18239,
+        "K_eligible": 22
+      }
+    }
+  },
+  "note": "Counts only. No target value is summarised; formation energy is used only to keep the lowest-energy duplicate. The decision rule was fixed in the config before this run.",
+  "minutes": 0.9032378395398458
+}

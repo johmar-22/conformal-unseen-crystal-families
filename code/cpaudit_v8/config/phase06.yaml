@@ -1,0 +1,156 @@
+# cpaudit_v6 - Phase 6 Tasks 6.2-6.3 (JARVIS-DFT freeze, features, splits). Sections of v5 (posthoc5,
+# audit6, figures) are kept unchanged so that those steps can still be re-run.
+# Nothing here refits a model. Existing Drive outputs are only read; new outputs go to new folders:
+#   phase05_v1/posthoc/   (post hoc tables, explicitly NOT pre-registered)
+#   phase06_v1/           (JARVIS data audit)
+#   paper_figures_v2/     (all paper figures, redrawn from the Drive files; v1 is left untouched)
+
+version: phase06_v1
+
+paths:
+  drive_root: /content/drive/MyDrive/NOMAD_Uncer_Quan
+  phase1_dir: phase01_v1          # read only
+  phase2_dir: phase02_v1          # read only
+  phase4_dir: phase04_v1          # read only
+  phase5_dir: phase05_v1          # read only, except the new subfolder posthoc/
+  out_dir: phase06_v1             # NEW
+  figures_dir: paper_figures_v2   # NEW
+  local_cache: /content/cpaudit_cache
+
+posthoc5:
+  out_subdir: posthoc
+  n_perm: 100000                  # permutations for the Spearman p-value
+
+# ---------------------------------------------------------------------------------------------
+# Task 6.1 data audit (plan Section 6). Counts only: no model is fitted, and no target VALUE is
+# summarised per group (only whether it is present), so the audit cannot steer later results.
+jarvis:
+  # Pinned release. jarvis-tools' dataset name "dft_3d" points to this file in jarvis-tools
+  # 2026.6.12; the URL and file name are fixed here so a later jarvis-tools cannot change the data.
+  primary:
+    name: dft_3d
+    file: jdft_3d-9-24-2025.json
+    url: https://ndownloader.figshare.com/files/64391379
+  # secondary release, counted only to show how much the choice of release matters
+  # (dft_3d_2022 is the 75,993-entry release quoted in the revision plan)
+  compare:
+    - name: dft_3d_2022
+      file: jdft_3d-12-12-2022.json
+      url: https://ndownloader.figshare.com/files/38521619
+  inputs_subdir: inputs           # zips are stored on Drive under phase06_v1/inputs/
+
+audit:
+  min_group_size: 200             # plan: >= 200 structures per space group (Li et al. 2025)
+  size_grid: [100, 150, 200, 300, 500]
+  min_groups_for_oxides: 20       # plan: if fewer than about 20 groups survive, use all chemistries
+  min_calibration_groups: 10      # plan / Appendix A3: >= 10 calibration groups for group-level CP
+  # Oxide definitions. Primary (the plan's wording, "O present and the only anion"): the most
+  # probable charge-balanced oxidation-state assignment with common oxidation states
+  # (pymatgen Composition.oxi_state_guesses, ICSD-based priors) gives a negative state to O only.
+  # Compositions with no charge-balanced assignment are not counted as oxides (reported).
+  # Sensitivity: an element rule (O present, no element from `other_anion_formers`).
+  oxide_rule_primary: oxidation_state
+  other_anion_formers: [H, C, N, F, P, S, Cl, As, Se, Br, Te, I, At, He, Ne, Ar, Kr, Xe, Rn]
+  # Decision rule, fixed before the audit is run: oxides are the primary JARVIS set only if BOTH
+  # oxide definitions give >= min_groups_for_oxides eligible space groups; otherwise all
+  # chemistries are primary and oxides are a secondary analysis (group-level jackknife+ if they
+  # have fewer than 2 x min_calibration_groups eligible groups). A decision that flips with an
+  # arbitrary definition choice is not used.
+  decision_requires_both_oxide_rules: true
+  dedup_keys: [reduced_formula, spg_number]   # keep the lowest formation energy per atom
+
+# ---------------------------------------------------------------------------------------------
+# Tasks 6.2-6.3 (cpaudit_v6). No target is used by these steps.
+features:
+  chunk_size: 2000          # structures per checkpoint file on Drive (resume = run the step again)
+  workers: auto             # worker processes for the structure features (auto = all CPUs)
+
+splits:
+  symprec_matfold: 0.1      # MatFold 1.3 re-detects space groups with SpacegroupAnalyzer(symprec=0.1)
+  matfold_check_n: 2000     # random structures on which MatFold itself is run to verify our labels
+  seed: 20261118
+  primary_labels: mf        # MatFold labels (SpacegroupAnalyzer symprec 0.1) primary; db = JARVIS labels (sensitivity)
+
+# ---------------------------------------------------------------------------------------------
+# Phase 6 Tasks 6.4-6.5 (cpaudit_v7). Everything below is hashed into the pre-registration that
+# setup7 writes before any model is fitted (design: PHASE6_v7_DESIGN.md in the project).
+lgbm:
+  objective: regression          # L2, as on NOMAD
+  max_bin: 63                    # as on NOMAD
+  device: cpu
+  deterministic: true
+
+compute:
+  parallel_fits: auto            # concurrent fits = CPUs // 4 (at least 1); threads = CPUs / fits
+
+models7:
+  out_dir: phase07_v1            # NEW folder; Phase 6 inputs are read from phase06_v1
+  seed: 20261120
+  targets: [formation, bandgap, tbmbj]
+  min_group_size: 200            # eligible = MatFold space groups with >= 200 rows in the target's scope
+  outer_folds_per_half: 5        # 2 halves x 5 = 10 outer folds (MatFold nested K = 10)
+  inner_folds: 5                 # L = 5 inner folds by space group
+  alphas: [0.05, 0.10, 0.20]
+  alpha_primary: 0.10
+  cqr_quantiles: [0.05, 0.95]    # CQR at alpha = 0.10 only (as on NOMAD)
+  blocks:
+    formation: [primary, regimeA, randinner, polyex, h3, rep2, locso]
+    bandgap: [primary, regimeA, randinner, polyex, h3, rep2, locso]
+    tbmbj: [primary]             # descriptive: mean models only, no CQR
+  tuning:                        # cross-half nested tuning (h0, h1) + Regime A (RA)
+    n_trials: 15
+    n_startup_trials: 5
+    early_stopping_rounds: 50
+    max_rounds: 2000             # NOMAD's 1000 was reached by formation energy (deviation D3)
+    inner_folds: 3
+  locso_hp: h0                   # LOCSO reuses the h0 set (its tuning data overlap the held-out system; disclosed)
+  normalized:                    # sigma = mean kNN distance, as on NOMAD
+    knn_k: 25
+    pca_components: 50
+    beta: 0.01
+  h3:
+    n_partitions: 10
+    n_reshuffles: 200
+    n_cal_groups: {formation: 20, bandgap: 11}
+  spot_check: {n_unweighted: 32, n_weighted: 8}
+  decisions:                     # pre-registered rules evaluated by report7 (alpha = alpha_primary)
+    g5: {coverage: 0.85, share: 0.75}
+    h1: {marginal_lo: 0.88, marginal_hi: 0.92, low: 0.85, share_support: 0.10, share_absent: 0.05,
+         mondrian_coverage: 0.88, mondrian_share: 0.90}
+    g3: {failing: 0.80, lifted: 0.85, share: 0.50}
+    h3: {support: 0.88, reject: 0.85}
+    h4: {delta: 0.05, min_distance_auroc: 0.60, g4_threshold: 0.70}   # evaluated in v8
+    h5: {m: 20, mean_coverage: 0.88, dispersion_ratio: 1.25, min_groups: 2}  # evaluated in v8
+
+# ---------------------------------------------------------------------------------------------
+# Phase 6 Task 6.5 (v8): analyses of the v7 units. Reads phase07_v1 (never writes there); writes
+# phase08_v1/ and paper_figures_v3/. H4-J / H5-J rules are the v7 ones (models7.decisions); setup8
+# stops if they changed. setup8 writes the addendum before any v8 result exists.
+models8:
+  out_dir: phase08_v1
+  figures_dir: paper_figures_v3
+  seed: 20261121
+  targets: [formation, bandgap, tbmbj]   # distance / per-group table; H4-J, H5-J, H2 on formation and band gap
+  distance: {k: 25, pca_components: 50}  # NOMAD Phase 4 kNN score = "distance to training"
+  kde: {bandwidth_quantile: 0.3, n_reference: 20000, n_bandwidth: 5000}   # Schultz et al. 2025
+  classifier: {pca_components: 50, logistic_C: 1.0, cv_folds: 5}
+  flag: {alpha: 0.05, split_folds: 5}    # conformal kNN flag, Bates et al. 2023 (descriptive)
+  bootstrap: 2000                         # cluster bootstrap (H4) and group bootstrap (Spearman)
+  n_perm: 100000                          # Monte Carlo permutations for the group-level Spearman p
+  min_class: 10                           # within-group AUROC needs >= 10 of each class
+  abstention_grid: [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65,
+                    0.7, 0.75, 0.8, 0.85, 0.9]
+  fewshot: {n_worst: 3, m: [10, 20, 30], draws: 500, min_test_groups: 10}
+  hjplus:                                 # Lee, Barber & Willett eq. 20 / Theorem 5
+    targets: [bandgap, tbmbj, formation]  # cheapest first; formation is about 530 fits
+    alphas: [0.05, 0.10, 0.20]
+    spot_check: 64                        # test points per unit checked against eq. 20 written literally
+  h2: {tail_quantile: 0.90, drop_share: 0.10}
+  oxide: {rule: oxide_oxidation_rule, min_rows: 50}
+  h6_nomad:                               # NOMAD outcomes (project log, Phases 1-5), for the side-by-side table only
+    H1: "supported (Fd-3m 0.60 / 0.65 under CV+ random; Mondrian fixes it)"
+    G5: "n/a on NOMAD (5-6 families); LOSO: Fd-3m fails (0.34 / 0.54), others 0.92-1.00"
+    G3: "negative (normalized / CQR <= 0.56 on Fd-3m)"
+    H3: "not testable (5 families: group-level interval unbounded at alpha 0.10)"
+    H4: "not supported; G4 triggered (width AUROC 0.08)"
+    H5: "supported (one per composition, m = 20: mean 0.90-0.91)"

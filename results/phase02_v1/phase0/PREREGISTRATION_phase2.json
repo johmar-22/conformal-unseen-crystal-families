@@ -1,0 +1,91 @@
+{
+  "time_utc": "2026-11-17T07:14:00Z",
+  "config_hash": "8b86e24ced22b6dce03f797c2c396f0a101c7ab5a8a95b6a3162dc8aa91badd1",
+  "code_hash": "88eab1e03e62226ca0a8c3cd93befe4d28f16249321070dd21aeb23f8ec1d382",
+  "config_path": "/content/cpaudit_v2/config/phase02.yaml",
+  "config": {
+    "version": "phase02_v1",
+    "paths": {
+      "drive_root": "/content/drive/MyDrive/NOMAD_Uncer_Quan",
+      "soap_npz": "soap_features_corrected_v2.npz",
+      "duplicates_v7": "duplicate_entries_v7.csv",
+      "train_csv_url": "https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train.csv",
+      "geometry_url": "https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train/{id}/geometry.xyz",
+      "phase1_dir": "phase01_v1",
+      "out_dir": "phase02_v1",
+      "local_cache": "/content/cpaudit_cache"
+    },
+    "data": {
+      "expected_rows": 2400,
+      "expected_features": 23976,
+      "train_csv_sha256": "2be6168b578c4be91b7380e7404a2b58912790d8e03c51b28f4f279f2d8bb872",
+      "composition_decimals": 1,
+      "fd3m_gamma_split_deg": 60.0,
+      "dedup": {
+        "rule": "identical_input_and_targets",
+        "matcher": {
+          "ltol": 0.001,
+          "stol": 0.001,
+          "angle_tol": 0.05
+        },
+        "target_tol": 0.002,
+        "check_tol_ang": 0.001
+      }
+    },
+    "seed_base": 20261117,
+    "alpha": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "alpha_primary": 0.1,
+    "post1": {
+      "cluster_draws": 200
+    },
+    "overlap": {
+      "pca_components": 50,
+      "logistic_C": 1.0,
+      "knn_k": 25,
+      "cv_folds": 5,
+      "auroc_max": 0.9,
+      "ess_min": 50,
+      "prob_clip": 1e-06
+    },
+    "loso": {
+      "order": [
+        227,
+        12,
+        33,
+        167,
+        194,
+        206
+      ],
+      "hpo": {
+        "n_trials": 15,
+        "n_startup_trials": 5,
+        "early_stopping_rounds": 50,
+        "max_rounds": 1000
+      },
+      "random_cv_k": 5,
+      "cqr": true,
+      "normalized": {
+        "knn_k": 25,
+        "pca_components": 50,
+        "beta": 0.01
+      },
+      "leave_two_out": true,
+      "reference_lattice": 227,
+      "group_conformal_tau": 0.9
+    },
+    "lgbm": {
+      "objective": "regression",
+      "max_bin": 63,
+      "device": "cpu",
+      "deterministic": true
+    },
+    "compute": {
+      "parallel_fits": "auto"
+    }
+  },
+  "n_after_dedup": 2343
+}

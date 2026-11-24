@@ -1,0 +1,4 @@
+alpha,n_units,n_groups,marginal,group_weighted,share_groups_at_nominal,share_groups_below_080,median_width_sd,n_unbounded,theorem5_bound
+0.05,10,10,1.0,1.0,1.0,0.0,inf,3083,0.9
+0.1,10,10,0.9993512812195913,0.9992957746478872,1.0,0.0,16.07127234648921,0,0.8
+0.2,10,10,0.8884203697697048,0.8938422221769337,1.0,0.0,1.2545607782976753,0,0.6

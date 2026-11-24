@@ -1,0 +1,247 @@
+{
+  "label": "POST HOC, not pre-registered",
+  "created_utc": "2026-11-18T05:30:13Z",
+  "code_hash": "e2b26efc5edb3aba2ae57319f1093daf351df882ba3f3a35907b60b50f11893f",
+  "phase5_preregistration": {
+    "path": "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/phase0/PREREGISTRATION_phase5.json",
+    "sha256": "b93ae5b1118d14fce42df325d7159d4d8527653ef3d26a31daf5cadb5fae5f23",
+    "time_utc": "2026-11-17T20:12:01Z"
+  },
+  "inputs_sha256": {
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/report/phase5_dispersion.csv": "c66757a3eff67b9f87bf9c4e30d7e903ad8a9d6afcf0b5aed8c75d18bbe0bc6d",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/report/phase5_summary.csv": "02db94278b4dc0b2879e81abb12d4929120654d432105d8d764672e2c2f94274",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/phase0/PREREGISTRATION_phase5.json": "b93ae5b1118d14fce42df325d7159d4d8527653ef3d26a31daf5cadb5fae5f23",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/inputs/train.csv": "2be6168b578c4be91b7380e7404a2b58912790d8e03c51b28f4f279f2d8bb872",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/bandgap_loso227.npz": "66d32b95c9ce99dc15e163b165fc92e33ef064edeecd6a0b7c71497e63e72884",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/bandgap_loso227.csv.gz": "2974e01976fa0cd920dc8e89137a4b00dc133cc1a2a62c20552603902fdc63b1",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/formation_loso227.npz": "d2f5fa8a95c2914103c24447dc695dfe17d874651f92f6f67c92f79b5bd6546f",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/formation_loso227.csv.gz": "12028c61b64aec11f2b240454ad6d82d3dfef3706b6f40dedf2d16ddf4f89a04",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/bandgap_loso12.npz": "c232eb3d59ab2f1b0b77a93753640a9d1294530c6a4ec4d2858f89a0d088f758",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/bandgap_loso12.csv.gz": "9890815424f8ff6dd7df985cb33499ad7f4983130d240108c80869b9519eb82c",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/formation_loso12.npz": "9cb74441362b27aa7409930ac87e1d2fdd061f121bb4be257482c2d496a4bfa5",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/formation_loso12.csv.gz": "d2bdecc27a197c3c7ef0657349cfa532f3123f1ba65a2f34debe0deeea3f1c1c",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/bandgap_loso33.npz": "7ec3c6fd80a3c5bf7e37a32aff63a14b6c68062c5328544fd89144f29632dcab",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/bandgap_loso33.csv.gz": "d546c86ddab7ea7cd3cd4ded5953b108edcaad875ba96b8ef23c69de24640862",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/formation_loso33.npz": "86f905bbcce264f6a70a65853ffa1af0d7df4289b700fad84dbb833dc11c3aea",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/formation_loso33.csv.gz": "f60c0791dde950fbbe4d6b1ff839b48d4f24601f337711dabfef7b1581ba2645",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/bandgap_loso167.npz": "6a5de53776287a34fb4483861b446b54bd40459c66f4707e83cf935cefca1fb1",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/bandgap_loso167.csv.gz": "7ba2879f36b37a68f4e60ef1a1ce0105668f84bb28ff68ca783790d29112df09",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/formation_loso167.npz": "7d23a3942c6862ed2bbf2e2cd929d28cccdc015b96158e7fc75bca4ca1705b1c",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/formation_loso167.csv.gz": "c5fbb319bc11a9de08bc6ae7d1bdcf6011a2715338199e45461479dbe26520d5",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/bandgap_loso194.npz": "c3c29d60aa8342532df4183f5b25237efdf1f4019d5d4f11e8ae66019926c90b",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/bandgap_loso194.csv.gz": "8e5adb44df8b94570e5a5f827385304eaf6d2650d1222c917919d9ce4596c38e",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/formation_loso194.npz": "6e94e27a4b65227aee68857b06bb21f0127bb77fe3726354d262994a4da095a2",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/formation_loso194.csv.gz": "dc018d856d83cc9ea2f377ef34c0f61d1654ffdae3a166b798c596d7074a8f06",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/bandgap_loso206.npz": "ea8a7470e90d3837987a709034ece36678927890aa693cb550e07b60df2d2447",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/bandgap_loso206.csv.gz": "6db170646973092af5f98a15bd07139ddd0d7744e302ea176634e51538a6eb01",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/formation_loso206.npz": "9a7251c3fd9d0e2621272595df65ae76846a8cdc5d71a510b2f372d70cd1019f",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/formation_loso206.csv.gz": "722df53ffb4fb27ca763bfc48bad5526aedec696fdd09d9f9f718a331569f90e",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/bandgap_l2o194.npz": "3658e2a425e5ecfbe2ab2e6b0a9bbec5598256d49b85f7c483cf9dd29a425e81",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/bandgap_l2o194.csv.gz": "8e78b98cc8f79d55de66053d1e5f8ffd4e2a4951c1b96d84259bb990eebf25b7",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase02_v1/loso/formation_l2o194.npz": "544b8aaae10bb25ac0b35bb93b2be6206f8299820332451e05c6f01c7be9b9d5",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase05_v1/draws/formation_l2o194.csv.gz": "cae9e09e10f32f37615382ee9447f4e581c2cb8631c084a759b4e902225e8bec"
+  },
+  "verification_against_phase5_draws": {
+    "bandgap_loso227": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_loso227": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 5.551115123125783e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 8.326672684688674e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_loso12": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 2.220446049250313e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 2.220446049250313e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_loso12": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 8.326672684688674e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 8.326672684688674e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_loso33": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 5.551115123125783e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 2.220446049250313e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_loso33": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 9.71445146547012e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 9.71445146547012e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_loso167": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_loso167": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 9.71445146547012e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 9.71445146547012e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_loso194": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_loso194": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 1.1102230246251565e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 8.326672684688674e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_loso206": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_loso206": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 9.020562075079397e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 1.1102230246251565e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_l2o194": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_l2o194": {
+      "split": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 1.1102230246251565e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 2500,
+        "max_abs_dwidth": 8.326672684688674e-17,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    }
+  },
+  "statistics": {
+    "spearman_icc_resid_vs_rho_clustered": {
+      "rho": 0.7274725274725276,
+      "p_permutation": 0.004339956600433996,
+      "p_asymptotic": 0.00319061631898815,
+      "n": 14
+    },
+    "spearman_icc_absdev_vs_rho_clustered": {
+      "rho": 0.5252747252747253,
+      "p_permutation": 0.05652943470565294,
+      "n": 14
+    },
+    "m": 20,
+    "ratio_offset_to_nomodel_range": {
+      "bandgap": [
+        0.15604037592271816,
+        0.6360641558207036
+      ],
+      "formation": [
+        0.4239532902148957,
+        1.0232588461224092
+      ]
+    },
+    "width_nomodel_sd_range": [
+      2.9648102230072886,
+      4.313652865506599
+    ],
+    "cov_nomodel_range": [
+      0.8967213853066125,
+      0.9081826452803343
+    ]
+  },
+  "minutes": 2.0564061562220255
+}

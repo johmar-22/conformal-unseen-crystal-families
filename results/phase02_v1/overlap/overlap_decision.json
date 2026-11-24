@@ -1,0 +1,9 @@
+{
+  "pca_explained": 0.9150511913427263,
+  "gate": {
+    "auroc_max": 0.9,
+    "ess_min": 50,
+    "median_test_weight_share_below": 0.1
+  },
+  "weighted_cvplus_for": []
+}

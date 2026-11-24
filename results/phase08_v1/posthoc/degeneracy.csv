@@ -1,0 +1,31 @@
+target,method,alpha,K_min,K_max,atom,status
+formation,hierarchical jackknife+,0.05,53,54,0.01851851852,finite
+formation,group-weighted CV+,0.05,53,54,0.01851851852,finite
+formation,hierarchical jackknife+,0.1,53,54,0.01851851852,finite
+formation,group-weighted CV+,0.1,53,54,0.01851851852,finite
+formation,hierarchical jackknife+,0.2,53,54,0.01851851852,finite
+formation,group-weighted CV+,0.2,53,54,0.01851851852,finite
+formation,H3 HCP,0.05,20,20,0.04761904762,finite
+formation,H3 single subsampling,0.05,20,20,,largest term
+formation,H3 HCP,0.1,20,20,0.04761904762,finite
+formation,H3 single subsampling,0.1,20,20,,finite
+formation,H3 HCP,0.2,20,20,0.04761904762,finite
+formation,H3 single subsampling,0.2,20,20,,finite
+bandgap,hierarchical jackknife+,0.05,27,28,0.03571428571,finite
+bandgap,group-weighted CV+,0.05,27,28,0.03571428571,finite
+bandgap,hierarchical jackknife+,0.1,27,28,0.03571428571,finite
+bandgap,group-weighted CV+,0.1,27,28,0.03571428571,finite
+bandgap,hierarchical jackknife+,0.2,27,28,0.03571428571,finite
+bandgap,group-weighted CV+,0.2,27,28,0.03571428571,finite
+bandgap,H3 HCP,0.05,11,11,0.08333333333,unbounded
+bandgap,H3 single subsampling,0.05,11,11,,unbounded
+bandgap,H3 HCP,0.1,11,11,0.08333333333,finite
+bandgap,H3 single subsampling,0.1,11,11,,largest term
+bandgap,H3 HCP,0.2,11,11,0.08333333333,finite
+bandgap,H3 single subsampling,0.2,11,11,,finite
+tbmbj,hierarchical jackknife+,0.05,9,9,0.1,unbounded
+tbmbj,group-weighted CV+,0.05,9,9,0.1,unbounded
+tbmbj,hierarchical jackknife+,0.1,9,9,0.1,largest term
+tbmbj,group-weighted CV+,0.1,9,9,0.1,largest term
+tbmbj,hierarchical jackknife+,0.2,9,9,0.1,finite
+tbmbj,group-weighted CV+,0.2,9,9,0.1,finite

@@ -1,0 +1,5 @@
+design,method,median_coverage,share_below_090,share_below_080,median_width_sd,groups
+primary,cvplus,0.9170248765319189,0.4,0.0,1.3453075892043866,10
+primary,cvplus_gw,1.0,0.0,0.0,16.12428299493974,10
+primary,enssd,0.24313199458187024,1.0,1.0,0.19061314571668925,10
+primary,ncvplus,0.894219736087206,0.6,0.0,1.4115680833079869,10

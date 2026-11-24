@@ -1,0 +1,582 @@
+{
+  "created_utc": "2026-11-18T09:44:33Z",
+  "code_hash": "768545a70e7ee0616ff6de6101e1a043a916b971b211b97caef25caa54bd802e",
+  "matfold_version": "1.3.3",
+  "pymatgen_version": "2026.10.24",
+  "holdouts_v2_sha256": "f51e4ac8eb3e68f26678e546ef725a015d21829e374bc2cd0017fe00c38b5050",
+  "min_group_size": 200,
+  "fraction_lower_limit": 0.0024363734062820574,
+  "label_check_all_rows": {
+    "n": 81884,
+    "sgnum_mismatch": 0,
+    "crystalsys_mismatch": 0,
+    "composition_mismatch": 0
+  },
+  "splits": {
+    "sgnum": {
+      "folds": [
+        {
+          "fold": 0,
+          "label": 229,
+          "n_test": 249,
+          "n_train": 81635,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 1,
+          "label": 59,
+          "n_test": 319,
+          "n_train": 81565,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 2,
+          "label": 64,
+          "n_test": 242,
+          "n_train": 81642,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 3,
+          "label": 227,
+          "n_test": 934,
+          "n_train": 80950,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 4,
+          "label": 14,
+          "n_test": 1543,
+          "n_train": 80341,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 5,
+          "label": 129,
+          "n_test": 1263,
+          "n_train": 80621,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 6,
+          "label": 167,
+          "n_test": 315,
+          "n_train": 81569,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 7,
+          "label": 191,
+          "n_test": 951,
+          "n_train": 80933,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 8,
+          "label": 12,
+          "n_test": 2663,
+          "n_train": 79221,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 9,
+          "label": 65,
+          "n_test": 786,
+          "n_train": 81098,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 10,
+          "label": 25,
+          "n_test": 499,
+          "n_train": 81385,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 11,
+          "label": 187,
+          "n_test": 3487,
+          "n_train": 78397,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 12,
+          "label": 115,
+          "n_test": 318,
+          "n_train": 81566,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 13,
+          "label": 15,
+          "n_test": 1328,
+          "n_train": 80556,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 14,
+          "label": 148,
+          "n_test": 719,
+          "n_train": 81165,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 15,
+          "label": 216,
+          "n_test": 4533,
+          "n_train": 77351,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 16,
+          "label": 5,
+          "n_test": 543,
+          "n_train": 81341,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 17,
+          "label": 139,
+          "n_test": 3985,
+          "n_train": 77899,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 18,
+          "label": 127,
+          "n_test": 404,
+          "n_train": 81480,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 19,
+          "label": 4,
+          "n_test": 337,
+          "n_train": 81547,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 20,
+          "label": 194,
+          "n_test": 2453,
+          "n_train": 79431,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 21,
+          "label": 119,
+          "n_test": 988,
+          "n_train": 80896,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 22,
+          "label": 186,
+          "n_test": 564,
+          "n_train": 81320,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 23,
+          "label": 55,
+          "n_test": 225,
+          "n_train": 81659,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 24,
+          "label": 225,
+          "n_test": 8713,
+          "n_train": 73171,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 25,
+          "label": 99,
+          "n_test": 3478,
+          "n_train": 78406,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 26,
+          "label": 47,
+          "n_test": 527,
+          "n_train": 81357,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 27,
+          "label": 71,
+          "n_test": 1113,
+          "n_train": 80771,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 28,
+          "label": 38,
+          "n_test": 985,
+          "n_train": 80899,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 29,
+          "label": 8,
+          "n_test": 1052,
+          "n_train": 80832,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 30,
+          "label": 62,
+          "n_test": 2526,
+          "n_train": 79358,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 31,
+          "label": 44,
+          "n_test": 336,
+          "n_train": 81548,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 32,
+          "label": 160,
+          "n_test": 832,
+          "n_train": 81052,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 33,
+          "label": 122,
+          "n_test": 244,
+          "n_train": 81640,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 34,
+          "label": 141,
+          "n_test": 351,
+          "n_train": 81533,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 35,
+          "label": 121,
+          "n_test": 306,
+          "n_train": 81578,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 36,
+          "label": 10,
+          "n_test": 316,
+          "n_train": 81568,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 37,
+          "label": 123,
+          "n_test": 4266,
+          "n_train": 77618,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 38,
+          "label": 215,
+          "n_test": 229,
+          "n_train": 81655,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 39,
+          "label": 82,
+          "n_test": 275,
+          "n_train": 81609,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 40,
+          "label": 156,
+          "n_test": 824,
+          "n_train": 81060,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 41,
+          "label": 9,
+          "n_test": 273,
+          "n_train": 81611,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 42,
+          "label": 189,
+          "n_test": 822,
+          "n_train": 81062,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 43,
+          "label": 136,
+          "n_test": 312,
+          "n_train": 81572,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 44,
+          "label": 140,
+          "n_test": 463,
+          "n_train": 81421,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 45,
+          "label": 164,
+          "n_test": 2039,
+          "n_train": 79845,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 46,
+          "label": 1,
+          "n_test": 1129,
+          "n_train": 80755,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 47,
+          "label": 6,
+          "n_test": 790,
+          "n_train": 81094,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 48,
+          "label": 74,
+          "n_test": 582,
+          "n_train": 81302,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 49,
+          "label": 11,
+          "n_test": 756,
+          "n_train": 81128,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 50,
+          "label": 221,
+          "n_test": 4665,
+          "n_train": 77219,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 51,
+          "label": 36,
+          "n_test": 343,
+          "n_train": 81541,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 52,
+          "label": 166,
+          "n_test": 2267,
+          "n_train": 79617,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 53,
+          "label": 2,
+          "n_test": 1623,
+          "n_train": 80261,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 54,
+          "label": 193,
+          "n_test": 359,
+          "n_train": 81525,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 55,
+          "label": 31,
+          "n_test": 249,
+          "n_train": 81635,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 56,
+          "label": 107,
+          "n_test": 580,
+          "n_train": 81304,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 57,
+          "label": 87,
+          "n_test": 212,
+          "n_train": 81672,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 58,
+          "label": 63,
+          "n_test": 1712,
+          "n_train": 80172,
+          "same_test": true,
+          "same_train": true
+        }
+      ],
+      "n_folds": 59,
+      "missing_labels": [],
+      "all_identical": true,
+      "matfold_json": {
+        "path": "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase06_v1/splits_matfold/sgnum/mf.sgnum.json",
+        "sha256": "30d03020ba8e19ec54ba17ea5468a64a7d6f30acbac32842e8d60c6aa39fb97c"
+      },
+      "options": {
+        "n_outer_splits": 0,
+        "n_inner_splits": 1,
+        "seed": 20261118,
+        "fraction_lower_limit": 0.0024363734062820574
+      },
+      "n_csv_files": 119
+    },
+    "crystalsys": {
+      "folds": [
+        {
+          "fold": 0,
+          "label": "trigonal",
+          "n_test": 7915,
+          "n_train": 73969,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 1,
+          "label": "triclinic",
+          "n_test": 2752,
+          "n_train": 79132,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 2,
+          "label": "monoclinic",
+          "n_test": 9965,
+          "n_train": 71919,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 3,
+          "label": "orthorhombic",
+          "n_test": 12876,
+          "n_train": 69008,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 4,
+          "label": "tetragonal",
+          "n_test": 18470,
+          "n_train": 63414,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 5,
+          "label": "hexagonal",
+          "n_test": 9317,
+          "n_train": 72567,
+          "same_test": true,
+          "same_train": true
+        },
+        {
+          "fold": 6,
+          "label": "cubic",
+          "n_test": 20589,
+          "n_train": 61295,
+          "same_test": true,
+          "same_train": true
+        }
+      ],
+      "n_folds": 7,
+      "missing_labels": [],
+      "all_identical": true,
+      "matfold_json": {
+        "path": "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase06_v1/splits_matfold/crystalsys/mf.crystalsys.json",
+        "sha256": "50334565ea945033bc2a77ef92d01d95cd8e4e88858dce4e55b00816c1876c3e"
+      },
+      "options": {
+        "n_outer_splits": 0,
+        "n_inner_splits": 1,
+        "seed": 20261118
+      },
+      "n_csv_files": 15
+    }
+  },
+  "matfold_init_minutes": 9.570881899197897,
+  "minutes": 11.078695507844289
+}

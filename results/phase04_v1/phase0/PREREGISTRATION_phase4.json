@@ -1,0 +1,92 @@
+{
+  "time_utc": "2026-11-17T19:13:28Z",
+  "config_hash": "f654359b5ecc268096513ed8e8217e40cffcf85e37d8a410ea8e777265903ce5",
+  "code_hash": "e411f88d5433b979fcd8fe02213244bf0e30a8b00b9d65750d84ffd581c000d9",
+  "config_path": "/content/cpaudit_v3/config/phase04.yaml",
+  "config": {
+    "version": "phase04_v1",
+    "paths": {
+      "drive_root": "/content/drive/MyDrive/NOMAD_Uncer_Quan",
+      "soap_npz": "soap_features_corrected_v2.npz",
+      "train_csv_url": "https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train.csv",
+      "geometry_url": "https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train/{id}/geometry.xyz",
+      "phase2_dir": "phase02_v1",
+      "out_dir": "phase04_v1",
+      "local_cache": "/content/cpaudit_cache"
+    },
+    "data": {
+      "expected_rows": 2400,
+      "expected_features": 23976,
+      "train_csv_sha256": "2be6168b578c4be91b7380e7404a2b58912790d8e03c51b28f4f279f2d8bb872",
+      "composition_decimals": 1,
+      "fd3m_gamma_split_deg": 60.0,
+      "dedup": {
+        "rule": "identical_input_and_targets",
+        "matcher": {
+          "ltol": 0.001,
+          "stol": 0.001,
+          "angle_tol": 0.05
+        },
+        "target_tol": 0.002,
+        "check_tol_ang": 0.001
+      }
+    },
+    "seed_base": 20261118,
+    "alpha_primary": 0.1,
+    "reference_interval": "cvplus_lattice",
+    "detect": {
+      "knn": {
+        "k": 25,
+        "pca_components": 50
+      },
+      "kde": {
+        "kernel": "epanechnikov",
+        "bandwidth_quantile": 0.3,
+        "space": "standardized_full"
+      },
+      "classifier": {
+        "pca_components": 50,
+        "logistic_C": 1.0,
+        "cv_folds": 5
+      },
+      "large_error_quantile": 0.9,
+      "min_class": 10,
+      "bootstrap": 2000,
+      "abstention_grid": [
+        0.0,
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9
+      ],
+      "flag": {
+        "score": "knn",
+        "alpha": 0.05,
+        "split_folds": 5
+      },
+      "lattice_permutations": 100000
+    },
+    "decisions": {
+      "h4_min_auroc": 0.6,
+      "h4_min_diff": 0.05,
+      "g4_auroc": 0.7
+    },
+    "compute": {
+      "workers": 1
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "formation": {
+    "G5": {
+      "share_covered": 0.9152542372881356,
+      "holds": true,
+      "n_groups": 59,
+      "share_below_0_90": 0.13559322033898305,
+      "share_below_0_80": 0.05084745762711865,
+      "median_coverage": 0.9716157205240175
+    },
+    "G3J": {
+      "n_failing": 3,
+      "share_lifted": 0.0,
+      "positive": false
+    },
+    "H1J": {
+      "marginal": 0.9239864091445009,
+      "share_groups_below": 0.06779661016949153,
+      "share_mondrian_ok": 1.0,
+      "verdict": "not supported"
+    },
+    "H3J": {
+      "coverage": {
+        "hcp": 0.9434411384286236,
+        "single_subsample": 0.9049366487052624
+      },
+      "share_test_groups_below_080": {
+        "hcp": 0.056105263157894734,
+        "single_subsample": 0.136
+      },
+      "verdict": "supported"
+    }
+  },
+  "bandgap": {
+    "G5": {
+      "share_covered": 0.8387096774193549,
+      "holds": true,
+      "n_groups": 31,
+      "share_below_0_90": 0.22580645161290322,
+      "share_below_0_80": 0.06451612903225806,
+      "median_coverage": 0.9275
+    },
+    "G3J": {
+      "n_failing": 2,
+      "share_lifted": 1.0,
+      "positive": true
+    },
+    "H1J": {
+      "marginal": 0.9168687161074633,
+      "share_groups_below": 0.03225806451612903,
+      "share_mondrian_ok": 0.967741935483871,
+      "verdict": "heterogeneity absent"
+    },
+    "H3J": {
+      "coverage": {
+        "hcp": 0.9806656794448122,
+        "single_subsample": 0.9154411846499818
+      },
+      "share_test_groups_below_080": {
+        "hcp": 0.0,
+        "single_subsample": 0.10833333333333334
+      },
+      "verdict": "supported"
+    }
+  },
+  "tbmbj": {
+    "G5": {
+      "share_covered": 0.9,
+      "holds": true,
+      "n_groups": 10,
+      "share_below_0_90": 0.4,
+      "share_below_0_80": 0.0,
+      "median_coverage": 0.9170248765319189
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "time_utc": "2026-11-16T08:15:46Z",
+  "train_csv_sha256": "2be6168b578c4be91b7380e7404a2b58912790d8e03c51b28f4f279f2d8bb872",
+  "soap_shape": [
+    2400,
+    23976
+  ],
+  "v5_split_reproduced": true,
+  "v5_targets_aligned": true,
+  "soap_rows_aligned_with_v5": true,
+  "duplicate_groups": 9,
+  "duplicate_entries": 18,
+  "entries_removed": 9,
+  "max_soap_rel_diff_within_duplicates": 0.0021240621131488283,
+  "duplicates_match_v7": false,
+  "duplicates_only_in_v7": [
+    [
+      467,
+      1073,
+      2085
+    ],
+    [
+      530,
+      694
+    ],
+    [
+      1167,
+      1679
+    ],
+    [
+      1196,
+      1889
+    ],
+    [
+      1222,
+      2262
+    ],
+    [
+      1963,
+      2314
+    ]
+  ],
+  "duplicates_only_new": [],
+  "n_after_dedup": 2391,
+  "composition_groups": 366,
+  "composition_group_size_max": 32,
+  "composition_singletons": 46,
+  "v5_test_composition_groups": 231,
+  "per_lattice": [
+    {
+      "lattice": "C2/m",
+      "sg": 12,
+      "n": 354,
+      "composition_groups": 61
+    },
+    {
+      "lattice": "Pna21",
+      "sg": 33,
+      "n": 432,
+      "composition_groups": 64
+    },
+    {
+      "lattice": "R-3c",
+      "sg": 167,
+      "n": 370,
+      "composition_groups": 62
+    },
+    {
+      "lattice": "P63/mmc",
+      "sg": 194,
+      "n": 353,
+      "composition_groups": 64
+    },
+    {
+      "lattice": "Ia-3",
+      "sg": 206,
+      "n": 489,
+      "composition_groups": 63
+    },
+    {
+      "lattice": "Fd-3m",
+      "sg": 227,
+      "n": 393,
+      "composition_groups": 52,
+      "n_227a_gamma_lt_split": 247,
+      "n_227b_gamma_ge_split": 146
+    }
+  ]
+}

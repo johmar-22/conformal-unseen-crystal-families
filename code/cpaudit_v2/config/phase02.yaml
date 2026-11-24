@@ -1,0 +1,70 @@
+# cpaudit_v2 - configuration for the Phase 1 follow-up checks, Phase 2 (LOSO mechanism)
+# and Phase 3 (overlap diagnostics) of the revision plan.
+# Edit BEFORE running `setup` (which writes the Phase 2 pre-registration). After that the
+# runner refuses a changed config unless you pass --allow-deviation, and it logs the change.
+
+version: phase02_v1
+
+paths:
+  drive_root: /content/drive/MyDrive/NOMAD_Uncer_Quan     # existing folder (read-only use)
+  soap_npz: soap_features_corrected_v2.npz                 # 2400 x 23976, rows in train.csv order
+  duplicates_v7: duplicate_entries_v7.csv                  # optional cross-check
+  train_csv_url: https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train.csv
+  geometry_url: https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train/{id}/geometry.xyz
+  phase1_dir: phase01_v1                                   # Phase 1 results (read only)
+  out_dir: phase02_v1                                      # NEW subfolder; nothing existing is overwritten
+  local_cache: /content/cpaudit_cache
+
+data:
+  expected_rows: 2400
+  expected_features: 23976
+  train_csv_sha256: 2be6168b578c4be91b7380e7404a2b58912790d8e03c51b28f4f279f2d8bb872
+  composition_decimals: 1
+  fd3m_gamma_split_deg: 60.0
+  dedup:
+    rule: identical_input_and_targets   # same input crystal (StructureMatcher) AND both targets within target_tol
+    matcher: {ltol: 1.0e-3, stol: 1.0e-3, angle_tol: 0.05}   # idealised Vegard geometries: true matches are exact
+    target_tol: 0.002                   # eV/atom and eV; 10x the 1e-4 reporting precision, 10x below formation MAE
+    check_tol_ang: 1.0e-3               # independent same-setting check (lattice automorphism + translation)
+
+seed_base: 20261117
+alpha: [0.05, 0.10, 0.20]
+alpha_primary: 0.10
+
+post1:                             # exploratory checks on saved Phase 1 outputs (no refitting)
+  cluster_draws: 200               # random one-per-composition-group calibration draws per split
+
+overlap:                           # Phase 3 diagnostics, run before any LOSO result exists
+  pca_components: 50
+  logistic_C: 1.0
+  knn_k: 25
+  cv_folds: 5
+  auroc_max: 0.90                  # overlap gate: max AUROC over the two classifiers <= this
+  ess_min: 50                      # ... and Kish ESS of the density-ratio weights >= this
+  prob_clip: 1.0e-6
+
+loso:
+  order: [227, 12, 33, 167, 194, 206]    # Fd-3m first: it decides gate G3
+  hpo:
+    n_trials: 15
+    n_startup_trials: 5
+    early_stopping_rounds: 50
+    max_rounds: 1000
+  random_cv_k: 5                   # in-distribution CV+ calibration on the 5 training lattices (contrast)
+  cqr: true                        # nested CQR-CV+ at alpha_primary
+  normalized:
+    knn_k: 25
+    pca_components: 50
+    beta: 0.01
+  leave_two_out: true              # Task 2.2 (refit without Fd-3m) for every other lattice
+  reference_lattice: 227
+  group_conformal_tau: 0.90        # family score = tau-quantile of the family's residuals
+
+lgbm:
+  objective: regression
+  max_bin: 63
+  device: cpu
+  deterministic: true
+
+compute:
+  parallel_fits: auto

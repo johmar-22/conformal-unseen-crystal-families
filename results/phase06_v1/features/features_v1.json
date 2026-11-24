@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-11-18T08:23:38Z",
+  "code_hash": "84c94726ebaf90f6de51fad1c712107f024f3f679963c409131fe3250696f05e",
+  "frozen_table_sha256": "c8f9a47772778598e3a6d3bacaa026d8c801f634c553765168b75d25ccd2703c",
+  "features_file": {
+    "path": "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase06_v1/features/features_v1.npz",
+    "sha256": "70e2adad586edec749e6aa9ce3c14fdbb0b02cb691aea7a16c30c901131034d9"
+  },
+  "shape": [
+    81884,
+    270
+  ],
+  "blocks": {
+    "composition": 145,
+    "density": 3,
+    "crystalnn": 122
+  },
+  "matminer_version": "0.10.1",
+  "pymatgen_version": "2026.10.24",
+  "minutes": 43.20323743025462,
+  "qa": {
+    "n_columns_all_nan": 0,
+    "columns_with_nan": 137,
+    "max_nan_fraction": 0.004713985638219921,
+    "worst_columns": {
+      "DensityFeatures|packing fraction": 0.0047,
+      "ElementProperty|MagpieData avg_dev Electronegativity": 0.0033,
+      "ElementProperty|MagpieData range Electronegativity": 0.0033,
+      "ElementProperty|MagpieData maximum Electronegativity": 0.0033,
+      "ElementProperty|MagpieData mean Electronegativity": 0.0033
+    },
+    "n_constant_columns": 0,
+    "constant_columns": [],
+    "rows_with_nan_by_block": {
+      "composition": 270,
+      "crystalnn": 27,
+      "density": 386
+    },
+    "n_structure_warnings": 413,
+    "n_crystalnn_failed": 27,
+    "n_rows_in_feature_identical_sets": 0,
+    "n_feature_identical_sets": 0,
+    "n_feature_identical_sets_spanning_space_groups": 0
+  }
+}

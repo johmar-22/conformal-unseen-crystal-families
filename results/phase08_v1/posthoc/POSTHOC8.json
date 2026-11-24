@@ -1,0 +1,151 @@
+{
+  "label": "POST HOC, not pre-registered (v8.1)",
+  "created_utc": "2026-11-19T14:25:57Z",
+  "code_hash": "c51dede456d0ca454ff67a3e2e6eed99cd4afc3d9ad49276114e751425e61747",
+  "inputs_sha256": {
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/phase0/PREREGISTRATION_phase6_v8.json": "742c596436a4a85866e9ddfe61187dd4ad2fcda01f910236bb3fd47fc2aa2963",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/fewshot/worst_groups.csv": "394a0ec939d7c00b2df9c3db8285e65aa4bc13dfab91dc618e29542c28178229",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/fewshot/formation_g216.csv.gz": "0a2bd002b65da622c59baceea3e373ebc8e64e77b71434323b4e6cb2d19b4e0d",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/fewshot/formation_g6.csv.gz": "b29d5d638b818b6cd12935d96efda48c71ce02b2b37dbe1f530c92ca57b22cc5",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/fewshot/formation_g187.csv.gz": "ab2d302246dc4667e3773b59737a02591155d91e5ecd3a210187b95c8b6cb990",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/fewshot/bandgap_g129.csv.gz": "b44b333a09aeb35842e63ca8d815d8bd10a18e4e09228ff837f68a0c2f7ad948",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/fewshot/bandgap_g99.csv.gz": "9be740ad45d0fb977b8abe16ab8240941060f22569751ea5a02ae33a7aa2cebd",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/fewshot/bandgap_g225.csv.gz": "72682112081f601318b6bae7fc4b92b81b6c75391f1dcdd19506063dcfce186f",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/report/formation_structures.csv.gz": "b288af14ef341306e196b91b9f2ecc2bbb5c1e7806ed665925eb88a4ba5011f5",
+    "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase08_v1/report/bandgap_structures.csv.gz": "deeb62b924dd5f4fdf0023c3f4c5605ada86acab1d07a22f807bfc4e738b2392"
+  },
+  "verification_against_fewshot8": {
+    "formation_g216": {
+      "split": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_g6": {
+      "split": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "formation_g187": {
+      "split": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_g129": {
+      "split": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 4.440892098500626e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_g99": {
+      "split": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 1.7763568394002505e-15,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    },
+    "bandgap_g225": {
+      "split": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 8.881784197001252e-16,
+        "max_abs_dcov": 1.1102230246251565e-16
+      },
+      "offset_full": {
+        "n_draws": 4500,
+        "max_abs_dwidth": 1.7763568394002505e-15,
+        "max_abs_dcov": 1.1102230246251565e-16
+      }
+    }
+  },
+  "abo3_pooled": {
+    "formation": {
+      "abo3": {
+        "n": 1192,
+        "coverage": 0.8703859060402684
+      },
+      "non_oxide": {
+        "n": 63481,
+        "coverage": 0.9089963926214143
+      },
+      "other_oxide": {
+        "n": 10524,
+        "coverage": 0.9754846066134549
+      }
+    },
+    "bandgap": {
+      "abo3": {
+        "n": 491,
+        "coverage": 0.9042769857433809
+      },
+      "non_oxide": {
+        "n": 10100,
+        "coverage": 0.9003960396039604
+      },
+      "other_oxide": {
+        "n": 5311,
+        "coverage": 0.9342873281867822
+      }
+    },
+    "tbmbj": {
+      "abo3": {
+        "n": 139,
+        "coverage": 0.8345323741007195
+      },
+      "non_oxide": {
+        "n": 2265,
+        "coverage": 0.9028697571743929
+      },
+      "other_oxide": {
+        "n": 679,
+        "coverage": 0.9160530191458026
+      }
+    }
+  },
+  "files": {
+    "fewshot_draws_formation_g216.csv.gz": "written",
+    "fewshot_draws_formation_g6.csv.gz": "written",
+    "fewshot_draws_formation_g187.csv.gz": "written",
+    "fewshot_draws_bandgap_g129.csv.gz": "written",
+    "fewshot_draws_bandgap_g99.csv.gz": "written",
+    "fewshot_draws_bandgap_g225.csv.gz": "written",
+    "fewshot_by_m.csv": "written",
+    "committee_spearman.csv": "written",
+    "committee_groups.csv": "written",
+    "committee_abstention_worst.csv": "written",
+    "oxides_abo3.csv": "written",
+    "degeneracy.csv": "written",
+    "POSTHOC8_SUMMARY.md": "written"
+  },
+  "minutes": 16.13147931098938
+}

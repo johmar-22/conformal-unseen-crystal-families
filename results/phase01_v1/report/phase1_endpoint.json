@@ -1,0 +1,12 @@
+{
+  "bandgap": {
+    "primary_endpoint_fd3m_cov_mean": 0.6002819628609325,
+    "decision_H1a": "H1a supported",
+    "H1b_supported": true
+  },
+  "formation": {
+    "primary_endpoint_fd3m_cov_mean": 0.6464319435697737,
+    "decision_H1a": "H1a supported",
+    "H1b_supported": false
+  }
+}

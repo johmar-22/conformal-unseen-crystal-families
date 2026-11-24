@@ -1,0 +1,6 @@
+# installed automatically by cpaudit_run_v5.py when missing
+pyyaml
+tabulate
+pymatgen          # Task 6.1 oxide classification (oxidation-state guesses) and reduced formulas
+crepes            # self-test cross-check only (--no-deps)
+mapie==0.8.6      # self-test cross-check only (--no-deps)

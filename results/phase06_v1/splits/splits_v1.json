@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-11-18T08:30:17Z",
+  "code_hash": "84c94726ebaf90f6de51fad1c712107f024f3f679963c409131fe3250696f05e",
+  "frozen_table_sha256": "c8f9a47772778598e3a6d3bacaa026d8c801f634c553765168b75d25ccd2703c",
+  "holdouts_file": {
+    "path": "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase06_v1/splits/holdouts_v1.npz",
+    "sha256": "1f7ec24dfa3749603d4e020a4394847d827d2024e412e54895989ab13b28f3a5"
+  },
+  "n_rows": 81884,
+  "n_losgo": 59,
+  "n_locso": 7,
+  "matfold_check": {
+    "n": 2000,
+    "seed": 20261118,
+    "matfold_version": "1.3.3",
+    "identical_space_group_symbol": 1.0,
+    "identical_crystal_system": 1.0
+  },
+  "label_agreement_overall": 0.9782863563089248,
+  "crystal_system_agreement_overall": 0.9812295442333057,
+  "K_eligible_under_matfold_labels": 59,
+  "polymorph_share_test_formulas": {
+    "median": 0.008731864588930683,
+    "note": "median fraction of all rows dropped from training in the polymorph-exclusion variant"
+  },
+  "minutes": 6.4131070097287495
+}

@@ -1,0 +1,59 @@
+# cpaudit_v5 - Phase 5 post hoc tables, Phase 6 Task 6.1 (JARVIS-DFT data audit), paper figures.
+# Nothing here refits a model. Existing Drive outputs are only read; new outputs go to new folders:
+#   phase05_v1/posthoc/   (post hoc tables, explicitly NOT pre-registered)
+#   phase06_v1/           (JARVIS data audit)
+#   paper_figures_v2/     (all paper figures, redrawn from the Drive files; v1 is left untouched)
+
+version: phase06_v1
+
+paths:
+  drive_root: /content/drive/MyDrive/NOMAD_Uncer_Quan
+  phase1_dir: phase01_v1          # read only
+  phase2_dir: phase02_v1          # read only
+  phase4_dir: phase04_v1          # read only
+  phase5_dir: phase05_v1          # read only, except the new subfolder posthoc/
+  out_dir: phase06_v1             # NEW
+  figures_dir: paper_figures_v2   # NEW
+  local_cache: /content/cpaudit_cache
+
+posthoc5:
+  out_subdir: posthoc
+  n_perm: 100000                  # permutations for the Spearman p-value
+
+# ---------------------------------------------------------------------------------------------
+# Task 6.1 data audit (plan Section 6). Counts only: no model is fitted, and no target VALUE is
+# summarised per group (only whether it is present), so the audit cannot steer later results.
+jarvis:
+  # Pinned release. jarvis-tools' dataset name "dft_3d" points to this file in jarvis-tools
+  # 2026.6.12; the URL and file name are fixed here so a later jarvis-tools cannot change the data.
+  primary:
+    name: dft_3d
+    file: jdft_3d-9-24-2025.json
+    url: https://ndownloader.figshare.com/files/64391379
+  # secondary release, counted only to show how much the choice of release matters
+  # (dft_3d_2022 is the 75,993-entry release quoted in the revision plan)
+  compare:
+    - name: dft_3d_2022
+      file: jdft_3d-12-12-2022.json
+      url: https://ndownloader.figshare.com/files/38521619
+  inputs_subdir: inputs           # zips are stored on Drive under phase06_v1/inputs/
+
+audit:
+  min_group_size: 200             # plan: >= 200 structures per space group (Li et al. 2025)
+  size_grid: [100, 150, 200, 300, 500]
+  min_groups_for_oxides: 20       # plan: if fewer than about 20 groups survive, use all chemistries
+  min_calibration_groups: 10      # plan / Appendix A3: >= 10 calibration groups for group-level CP
+  # Oxide definitions. Primary (the plan's wording, "O present and the only anion"): the most
+  # probable charge-balanced oxidation-state assignment with common oxidation states
+  # (pymatgen Composition.oxi_state_guesses, ICSD-based priors) gives a negative state to O only.
+  # Compositions with no charge-balanced assignment are not counted as oxides (reported).
+  # Sensitivity: an element rule (O present, no element from `other_anion_formers`).
+  oxide_rule_primary: oxidation_state
+  other_anion_formers: [H, C, N, F, P, S, Cl, As, Se, Br, Te, I, At, He, Ne, Ar, Kr, Xe, Rn]
+  # Decision rule, fixed before the audit is run: oxides are the primary JARVIS set only if BOTH
+  # oxide definitions give >= min_groups_for_oxides eligible space groups; otherwise all
+  # chemistries are primary and oxides are a secondary analysis (group-level jackknife+ if they
+  # have fewer than 2 x min_calibration_groups eligible groups). A decision that flips with an
+  # arbitrary definition choice is not used.
+  decision_requires_both_oxide_rules: true
+  dedup_keys: [reduced_formula, spg_number]   # keep the lowest formation energy per atom

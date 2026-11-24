@@ -1,0 +1,19 @@
+{
+  "learning_rate": 0.07119533679415123,
+  "num_leaves": 74,
+  "max_depth": 5,
+  "min_child_samples": 27,
+  "subsample": 0.8725602346373706,
+  "colsample_bytree": 0.765711911928825,
+  "reg_alpha": 0.00017592753715074187,
+  "reg_lambda": 0.007219688443462618,
+  "n_rounds": 84,
+  "_cv_mae": 0.38531518717869045,
+  "_inner_best_iters": [
+    15,
+    147,
+    40,
+    42,
+    175
+  ]
+}

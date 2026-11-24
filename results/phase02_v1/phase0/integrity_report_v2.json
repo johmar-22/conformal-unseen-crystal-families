@@ -1,0 +1,142 @@
+{
+  "time_utc": "2026-11-17T07:13:58Z",
+  "train_csv_sha256": "2be6168b578c4be91b7380e7404a2b58912790d8e03c51b28f4f279f2d8bb872",
+  "soap_shape": [
+    2400,
+    23976
+  ],
+  "rule": "identical_input_and_targets",
+  "matcher": {
+    "ltol": 0.001,
+    "stol": 0.001,
+    "angle_tol": 0.05
+  },
+  "target_tol": 0.002,
+  "identical_input_clusters": 55,
+  "identical_input_entries": 120,
+  "duplicate_groups": 47,
+  "entries_removed": 57,
+  "conflicting_clusters": 8,
+  "conflicting_entries": 16,
+  "conflicts": [
+    {
+      "ids": "308 2154",
+      "lattice": "Ia-3",
+      "d_formation": 0.4118,
+      "d_bandgap": 1.6932,
+      "soap_max_abs_diff_in_sd": 0.0
+    },
+    {
+      "ids": "531 1379",
+      "lattice": "Ia-3",
+      "d_formation": 0.2843,
+      "d_bandgap": 0.9653,
+      "soap_max_abs_diff_in_sd": 0.0
+    },
+    {
+      "ids": "2333 2370",
+      "lattice": "Fd-3m",
+      "d_formation": 0.10800000000000004,
+      "d_bandgap": 0.23360000000000003,
+      "soap_max_abs_diff_in_sd": 0.0
+    },
+    {
+      "ids": "126 395",
+      "lattice": "C2/m",
+      "d_formation": 0.06770000000000004,
+      "d_bandgap": 0.22839999999999994,
+      "soap_max_abs_diff_in_sd": 0.0
+    },
+    {
+      "ids": "1215 1886",
+      "lattice": "C2/m",
+      "d_formation": 0.019799999999999984,
+      "d_bandgap": 0.20679999999999998,
+      "soap_max_abs_diff_in_sd": 0.0
+    },
+    {
+      "ids": "353 2075",
+      "lattice": "C2/m",
+      "d_formation": 0.02260000000000001,
+      "d_bandgap": 0.05790000000000006,
+      "soap_max_abs_diff_in_sd": 0.0
+    },
+    {
+      "ids": "1223 1752",
+      "lattice": "R-3c",
+      "d_formation": 0.0,
+      "d_bandgap": 0.025600000000000733,
+      "soap_max_abs_diff_in_sd": 0.002403912265381367
+    },
+    {
+      "ids": "2319 2337",
+      "lattice": "Fd-3m",
+      "d_formation": 0.012500000000000011,
+      "d_bandgap": 0.006199999999999983,
+      "soap_max_abs_diff_in_sd": 0.0
+    }
+  ],
+  "max_soap_diff_in_sd_within_clusters": 0.007766580608662321,
+  "independent_check_pairs": 65,
+  "independent_check_same_setting_matches": 63,
+  "n_after_dedup": 2343,
+  "phase1_removed": 9,
+  "phase1_removed_subset_of_v2": true,
+  "extra_removed_vs_phase1": 48,
+  "extra_removed_by_lattice": {
+    "R-3c": 20,
+    "C2/m": 11,
+    "Ia-3": 10,
+    "Pna21": 5,
+    "P63/mmc": 2
+  },
+  "v7_removed": 16,
+  "v7_removed_subset_of_v2": true,
+  "composition_groups": 366,
+  "per_lattice": [
+    {
+      "lattice": "C2/m",
+      "sg": 12,
+      "n": 343,
+      "composition_groups": 61,
+      "conflicting": 6
+    },
+    {
+      "lattice": "Pna21",
+      "sg": 33,
+      "n": 427,
+      "composition_groups": 64,
+      "conflicting": 0
+    },
+    {
+      "lattice": "R-3c",
+      "sg": 167,
+      "n": 350,
+      "composition_groups": 62,
+      "conflicting": 2
+    },
+    {
+      "lattice": "P63/mmc",
+      "sg": 194,
+      "n": 351,
+      "composition_groups": 64,
+      "conflicting": 0
+    },
+    {
+      "lattice": "Ia-3",
+      "sg": 206,
+      "n": 479,
+      "composition_groups": 63,
+      "conflicting": 4
+    },
+    {
+      "lattice": "Fd-3m",
+      "sg": 227,
+      "n": 393,
+      "composition_groups": 52,
+      "conflicting": 4,
+      "n_227a": 247,
+      "n_227b": 146
+    }
+  ]
+}

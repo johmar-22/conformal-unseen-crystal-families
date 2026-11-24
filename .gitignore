@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+# third-party inputs fetched by tools/fetch_inputs.py
+results/*/inputs/
+# large files distributed as release assets
+*.npz.part
+soap_features_corrected_v2.npz
+results/phase06_v1/features/features_v1.npz

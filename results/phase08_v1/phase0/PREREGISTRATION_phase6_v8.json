@@ -1,0 +1,158 @@
+{
+  "time_utc": "2026-11-19T06:44:03Z",
+  "mock": false,
+  "config_hash8": "452f4cb9e3128eeb5ff3ce491a9986c14641b6f74bc9b6b5c98c4da2f2602041",
+  "code_hash": "f260c5e34f8d31c9c292b824882aa3b53008dd298725f0cf13c6b9dae1a0e6ee",
+  "v7_preregistration": {
+    "time_utc": "2026-11-18T20:16:44Z",
+    "config_hash": "baea14d0ddf1bcd464ec07c3a649521e4d33f4ece13e04a7b1758ffc145970fe",
+    "code_hash": "43ee6e98c5adc2fe38ccba6cb20b23951a6b18623cd732c443dbb28e6181df20"
+  },
+  "registered_rules_v7": {
+    "h4": {
+      "delta": 0.05,
+      "min_distance_auroc": 0.6,
+      "g4_threshold": 0.7
+    },
+    "h5": {
+      "m": 20,
+      "mean_coverage": 0.88,
+      "dispersion_ratio": 1.25,
+      "min_groups": 2
+    }
+  },
+  "v7_inputs": {
+    "frozen_table": "0504485398765cf381d6dedc583c93f94faf3c20bd04d10086970479cefc69b1",
+    "labels": "7b0cf364fe2af62a7aa93b65baa95fecc1453d17cb8fe1008bf29a166700699f",
+    "features_X": "c3218ec310bc30a31545f4cac1c471b174d8fd24eb3a179ffc5488f7550c5036",
+    "features_jid": "2ee9ee808e05ccaa32ca3399f2d9f8d0e0321be69a754cd4fc96813628e6d8b5",
+    "holdouts_v2": "743fd8e3a66bb801dccf7ccae0306e1d6ace1c1ec16c0bb282e650d8c81afcad"
+  },
+  "models8": {
+    "out_dir": "phase08_v1",
+    "figures_dir": "paper_figures_v3",
+    "seed": 20261121,
+    "targets": [
+      "formation",
+      "bandgap",
+      "tbmbj"
+    ],
+    "distance": {
+      "k": 25,
+      "pca_components": 50
+    },
+    "kde": {
+      "bandwidth_quantile": 0.3,
+      "n_reference": 20000,
+      "n_bandwidth": 5000
+    },
+    "classifier": {
+      "pca_components": 50,
+      "logistic_C": 1.0,
+      "cv_folds": 5
+    },
+    "flag": {
+      "alpha": 0.05,
+      "split_folds": 5
+    },
+    "bootstrap": 2000,
+    "n_perm": 100000,
+    "min_class": 10,
+    "abstention_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "fewshot": {
+      "n_worst": 3,
+      "m": [
+        10,
+        20,
+        30
+      ],
+      "draws": 500,
+      "min_test_groups": 10
+    },
+    "hjplus": {
+      "targets": [
+        "bandgap",
+        "tbmbj",
+        "formation"
+      ],
+      "alphas": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "spot_check": 64
+    },
+    "h2": {
+      "tail_quantile": 0.9,
+      "drop_share": 0.1
+    },
+    "oxide": {
+      "rule": "oxide_oxidation_rule",
+      "min_rows": 50
+    },
+    "h6_nomad": {
+      "H1": "supported (Fd-3m 0.60 / 0.65 under CV+ random; Mondrian fixes it)",
+      "G5": "n/a on NOMAD (5-6 families); LOSO: Fd-3m fails (0.34 / 0.54), others 0.92-1.00",
+      "G3": "negative (normalized / CQR <= 0.56 on Fd-3m)",
+      "H3": "not testable (5 families: group-level interval unbounded at alpha 0.10)",
+      "H4": "not supported; G4 triggered (width AUROC 0.08)",
+      "H5": "supported (one per composition, m = 20: mean 0.90-0.91)"
+    }
+  },
+  "worst_groups": {
+    "formation": [
+      {
+        "group": 216,
+        "symbol": "F-43m",
+        "primary_coverage": 0.5824
+      },
+      {
+        "group": 6,
+        "symbol": "Pm",
+        "primary_coverage": 0.7038
+      },
+      {
+        "group": 187,
+        "symbol": "P-6m2",
+        "primary_coverage": 0.7707
+      }
+    ],
+    "bandgap": [
+      {
+        "group": 129,
+        "symbol": "P4/nmm",
+        "primary_coverage": 0.7843
+      },
+      {
+        "group": 99,
+        "symbol": "P4mm",
+        "primary_coverage": 0.7885
+      },
+      {
+        "group": 225,
+        "symbol": "Fm-3m",
+        "primary_coverage": 0.8055
+      }
+    ]
+  }
+}

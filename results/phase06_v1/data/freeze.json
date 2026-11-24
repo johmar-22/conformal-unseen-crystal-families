@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-11-18T07:40:07Z",
+  "code_hash": "84c94726ebaf90f6de51fad1c712107f024f3f679963c409131fe3250696f05e",
+  "config_hash": "823860a125257b70b7ec2d1e5cb95339e8d1990eeda0cbfa9e095c1bf18a8ace",
+  "release": {
+    "file": "jdft_3d-9-24-2025.json",
+    "url": "https://ndownloader.figshare.com/files/64391379",
+    "sha256": "f9e0a3309f0000d5de1ec9e49c93963109ea45e63f451103f8f6595d2eabf7f5"
+  },
+  "audit_decision_sha256": "cb6bdb83a8e0d8a86c871cbd61d0982e30d6d4a6baa1d16fafda642b9fa39da4",
+  "scope": "all_chemistries",
+  "n_rows": 81884,
+  "n_eligible_groups": 59,
+  "n_rows_in_eligible": 75205,
+  "n_with_mbj": 18391,
+  "n_missing": {
+    "formation": 0,
+    "optb88vdw": 0
+  },
+  "frozen_table": {
+    "path": "/content/drive/MyDrive/NOMAD_Uncer_Quan/phase06_v1/data/jarvis_frozen.csv.gz",
+    "sha256": "c8f9a47772778598e3a6d3bacaa026d8c801f634c553765168b75d25ccd2703c"
+  },
+  "checks": "row count, eligible space groups and their sizes equal the Task 6.1 audit"
+}

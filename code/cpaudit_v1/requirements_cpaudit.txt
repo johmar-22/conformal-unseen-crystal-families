@@ -1,0 +1,7 @@
+# Installed on top of the standard Colab image. Do NOT pin numpy/scipy/pandas/scikit-learn here:
+# Colab ships compatible versions and re-pinning them is what breaks environments.
+optuna>=3.6
+crepes>=0.7
+pyyaml>=6.0
+tabulate>=0.9
+lightgbm>=4.3

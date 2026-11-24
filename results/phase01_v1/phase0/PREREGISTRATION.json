@@ -1,0 +1,69 @@
+{
+  "time_utc": "2026-11-16T08:15:53Z",
+  "config_hash": "0e3daf052c148e71abe7ee9d05813f31ab2ac6b40247023980eb19cbfc226275",
+  "code_hash": "fa22ab7a0f419bfc8b0bd1b2406473799891e1b888c35ffd84056d8a91d47463",
+  "config_path": "/content/cpaudit_v1/config/phase01.yaml",
+  "config": {
+    "version": "phase01_v1",
+    "paths": {
+      "drive_root": "/content/drive/MyDrive/NOMAD_Uncer_Quan",
+      "soap_npz": "soap_features_corrected_v2.npz",
+      "data_prep_v5": "data_prep_v5.npz",
+      "duplicates_v7": "duplicate_entries_v7.csv",
+      "train_csv_url": "https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train.csv",
+      "out_dir": "phase01_v1",
+      "local_cache": "/content/cpaudit_cache"
+    },
+    "data": {
+      "expected_rows": 2400,
+      "expected_features": 23976,
+      "composition_decimals": 1,
+      "fd3m_gamma_split_deg": 60.0
+    },
+    "splits": {
+      "n_repeats": 25,
+      "outer_folds": 5,
+      "cal_folds": 4,
+      "seed_base": 20261116
+    },
+    "alpha": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "alpha_primary": 0.1,
+    "cvplus": {
+      "k_random": 5,
+      "run_spacegroup_reference": true
+    },
+    "normalized": {
+      "knn_k": 25,
+      "pca_components": 50,
+      "beta": 0.01
+    },
+    "cqr": {
+      "enabled": true
+    },
+    "hpo": {
+      "mode": "once",
+      "n_trials": 25,
+      "n_startup_trials": 10,
+      "inner_folds": 5,
+      "early_stopping_rounds": 50,
+      "max_rounds": 1000,
+      "check_splits": [
+        1,
+        2
+      ]
+    },
+    "lgbm": {
+      "objective": "regression",
+      "max_bin": 63,
+      "device": "cpu",
+      "deterministic": true
+    },
+    "compute": {
+      "parallel_fits": "auto"
+    }
+  }
+}

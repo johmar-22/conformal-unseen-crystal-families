@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper."
+title: "Conformal prediction intervals for materials in unseen crystal families: failure, detection and few-shot recalibration: code and results"
+type: software
+authors:
+  - family-names: "Omar"
+    given-names: "Johaimen M."
+  - family-names: "Tan"
+    given-names: "Muhammed"
+repository-code: "https://github.com/johmar-22/conformal-unseen-crystal-families"
+license: MIT
+date-released: "2026-11-24"
+keywords: [conformal prediction, uncertainty quantification, materials informatics,
+           distribution shift, NOMAD 2018, JARVIS-DFT]

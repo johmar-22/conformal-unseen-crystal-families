@@ -1,0 +1,7 @@
+component,NOMAD,JARVIS formation,JARVIS bandgap
+H1,supported (Fd-3m 0.60 / 0.65 under CV+ random; Mondrian fixes it),not supported,heterogeneity absent
+G5,"n/a on NOMAD (5-6 families); LOSO: Fd-3m fails (0.34 / 0.54), others 0.92-1.00",holds,holds
+G3,negative (normalized / CQR <= 0.56 on Fd-3m),negative,positive
+H3,not testable (5 families: group-level interval unbounded at alpha 0.10),supported,supported
+H4,not supported; G4 triggered (width AUROC 0.08),not supported; G4 not triggered,not supported; G4 not triggered
+H5,"supported (one per composition, m = 20: mean 0.90-0.91)",supported,supported

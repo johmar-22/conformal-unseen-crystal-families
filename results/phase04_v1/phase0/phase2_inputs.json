@@ -1,0 +1,28 @@
+{
+  "time_utc": "2026-11-17T19:13:27Z",
+  "dedup_sha256": "84a389ee5660abc2601bd4f1cd01d837df303bdfc599db181d545fa925271e4e",
+  "units": {
+    "bandgap_loso227.npz": "66d32b95c9ce99dc15e163b165fc92e33ef064edeecd6a0b7c71497e63e72884",
+    "bandgap_loso12.npz": "c232eb3d59ab2f1b0b77a93753640a9d1294530c6a4ec4d2858f89a0d088f758",
+    "bandgap_loso33.npz": "7ec3c6fd80a3c5bf7e37a32aff63a14b6c68062c5328544fd89144f29632dcab",
+    "bandgap_loso167.npz": "6a5de53776287a34fb4483861b446b54bd40459c66f4707e83cf935cefca1fb1",
+    "bandgap_loso194.npz": "c3c29d60aa8342532df4183f5b25237efdf1f4019d5d4f11e8ae66019926c90b",
+    "bandgap_loso206.npz": "ea8a7470e90d3837987a709034ece36678927890aa693cb550e07b60df2d2447",
+    "bandgap_l2o12.npz": "07fd1f5b93b62a120981d97cfaf1312d3726c85e6e96cc996ec4c534e2fa3256",
+    "bandgap_l2o33.npz": "0fb9c702c7df7c39e2c2588b30906131045b71de01fa23b5f75b84b3461b0428",
+    "bandgap_l2o167.npz": "f41473696f9646a9e0624796ab74dedd6dfa9efed864fda8fda8c0abb0f30ac3",
+    "bandgap_l2o194.npz": "3658e2a425e5ecfbe2ab2e6b0a9bbec5598256d49b85f7c483cf9dd29a425e81",
+    "bandgap_l2o206.npz": "d8e05d22a2ae22f202f3b80fa6da0dc550aba6841e07a77b43c20441a4402788",
+    "formation_loso227.npz": "d2f5fa8a95c2914103c24447dc695dfe17d874651f92f6f67c92f79b5bd6546f",
+    "formation_loso12.npz": "9cb74441362b27aa7409930ac87e1d2fdd061f121bb4be257482c2d496a4bfa5",
+    "formation_loso33.npz": "86f905bbcce264f6a70a65853ffa1af0d7df4289b700fad84dbb833dc11c3aea",
+    "formation_loso167.npz": "7d23a3942c6862ed2bbf2e2cd929d28cccdc015b96158e7fc75bca4ca1705b1c",
+    "formation_loso194.npz": "6e94e27a4b65227aee68857b06bb21f0127bb77fe3726354d262994a4da095a2",
+    "formation_loso206.npz": "9a7251c3fd9d0e2621272595df65ae76846a8cdc5d71a510b2f372d70cd1019f",
+    "formation_l2o12.npz": "0943093a577ae6803add35068c854bec01ba14a2831df6035109c9a44f7cc3b7",
+    "formation_l2o33.npz": "dffa492c084e9357ff23321694c3a46768773a5101062142836ccffb0f31a0cb",
+    "formation_l2o167.npz": "b7a8ca1d6246618a5ba66929c447745fbaff9d255da61bef9b071f6d7ee6f654",
+    "formation_l2o194.npz": "544b8aaae10bb25ac0b35bb93b2be6206f8299820332451e05c6f01c7be9b9d5",
+    "formation_l2o206.npz": "8f84edb9a324d311c73f4f5fd028f588dbb377b4a3063fb1aa31339be0cb3092"
+  }
+}

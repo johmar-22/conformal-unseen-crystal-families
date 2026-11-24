@@ -1,0 +1,8 @@
+# installed automatically by cpaudit_run_v2.py when missing
+optuna>=3.6
+pyyaml
+tabulate
+pymatgen          # StructureMatcher for v2 de-duplication
+lightgbm          # preinstalled on Colab
+crepes            # self-test cross-check only (--no-deps)
+mapie==0.8.6      # self-test cross-check only (--no-deps)

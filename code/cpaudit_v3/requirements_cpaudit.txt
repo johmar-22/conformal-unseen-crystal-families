@@ -1,0 +1,6 @@
+# installed automatically by cpaudit_run_v3.py when missing
+pyyaml
+tabulate
+crepes            # self-test cross-check only (--no-deps)
+mapie==0.8.6      # self-test cross-check only (--no-deps)
+# pymatgen is optional in v3 (Phase 4 reuses the Phase 2 de-duplication record)

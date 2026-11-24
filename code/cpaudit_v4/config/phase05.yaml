@@ -1,0 +1,82 @@
+# cpaudit_v4 - Phase 5: few-shot, family-specific recalibration.
+# Edit BEFORE running `setup` (which writes the Phase 5 pre-registration). After that the runner
+# refuses a changed config unless you pass --allow-deviation, and it logs the change.
+# The main step refits nothing: it reads the Phase 2 units. Only the optional `train5` step refits.
+
+version: phase05_v1
+
+paths:
+  drive_root: /content/drive/MyDrive/NOMAD_Uncer_Quan     # existing folder (read-only use)
+  soap_npz: soap_features_corrected_v2.npz                 # used only by train5
+  train_csv_url: https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train.csv
+  geometry_url: https://raw.githubusercontent.com/csutton7/nomad_2018_kaggle_dataset/master/train/{id}/geometry.xyz
+  phase1_dir: phase01_v1                                   # read only (figures)
+  phase2_dir: phase02_v1                                   # read only (LOSO units, hyperparameters)
+  phase4_dir: phase04_v1                                   # read only (figures)
+  out_dir: phase05_v1                                      # NEW subfolder; nothing existing is overwritten
+  figures_dir: paper_figures_v1
+  local_cache: /content/cpaudit_cache
+
+data:                              # identical to Phases 2 and 4 (n = 2,343)
+  expected_rows: 2400
+  expected_features: 23976
+  train_csv_sha256: 2be6168b578c4be91b7380e7404a2b58912790d8e03c51b28f4f279f2d8bb872
+  composition_decimals: 1
+  fd3m_gamma_split_deg: 60.0
+  dedup:
+    rule: identical_input_and_targets
+    matcher: {ltol: 1.0e-3, stol: 1.0e-3, angle_tol: 0.05}
+    target_tol: 0.002
+    check_tol_ang: 1.0e-3
+
+seed_base: 20261119
+alpha_primary: 0.10
+
+# held-out families: the 6 LOSO lattices and the leave-two-out P63/mmc refit (second real failure)
+configs: ["loso:227", "loso:12", "loso:33", "loso:167", "loso:194", "loso:206", "l2o:194"]
+
+fewshot:
+  draws: 500
+  m_random: [9, 10, 20, 30, 50, 100]          # plan grid; m = 9 is the smallest finite case at alpha 0.1
+  m_clustered: [9, 10, 20, 30, 50, 100]
+  m_one_per_group: [9, 10, 20, 30, 40]        # capped by the number of composition groups (52-64)
+  m_subfamily: [9, 10, 20, 30, 50, 100]       # Fd-3m 227a (247) <-> 227b (146)
+  min_test_groups: 10
+  subfamily: true
+
+decisions:
+  sanity_n_se: 4
+  h5_m: 20
+  h5_ratio_support: 1.25
+  h5_ratio_reject: 1.50
+  h5_support_min: 6
+  h5_reject_min: 2
+  h5c_mean_drop: 0.03
+  h5c_min_families: 4
+  h5b_m: 20
+  h5b_width_ratio: 0.80
+  h5b_width_reject: 0.95
+  h5b_min_coverage: 0.88
+  h5b_share: 0.80
+  h5b_cells:                                   # Phase 2 E1: |bias|/MAE >= 0.80
+    bandgap: ["loso:227", "loso:12", "loso:167", "loso:206", "l2o:194"]
+    formation: ["loso:227", "loso:12", "loso:167", "loso:206", "loso:33", "l2o:194"]
+  coverage_floor: 0.80
+  practical_mean: 0.88
+  practical_risk: 0.10
+
+train:                                         # optional `train5` step (refits LightGBM)
+  configs: ["loso:227", "l2o:194"]
+  m: [10, 30, 100]
+  n_cal: 20
+  draws: 10
+  test_group_fraction: 0.40
+
+lgbm:                                          # as Phase 2
+  objective: regression
+  max_bin: 63
+  device: cpu
+  deterministic: true
+
+compute:
+  parallel_fits: auto

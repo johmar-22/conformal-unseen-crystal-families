@@ -1,0 +1,99 @@
+{
+  "D5_0_code_check_passed": true,
+  "n_sanity_cells": 168,
+  "n_sanity_failures": 0,
+  "H5": {
+    "H5_bandgap": {
+      "verdict": "supported",
+      "n_families": 7,
+      "n_rho_le_support": 7,
+      "n_rho_gt_reject": 0,
+      "rho": {
+        "P63/mmc (l2o)": 0.975,
+        "C2/m (loso)": 1.206,
+        "Pna21 (loso)": 1.009,
+        "R-3c (loso)": 1.083,
+        "P63/mmc (loso)": 0.954,
+        "Ia-3 (loso)": 1.126,
+        "Fd-3m (loso)": 1.114
+      }
+    },
+    "H5_formation": {
+      "verdict": "supported",
+      "n_families": 7,
+      "n_rho_le_support": 7,
+      "n_rho_gt_reject": 0,
+      "rho": {
+        "P63/mmc (l2o)": 1.079,
+        "C2/m (loso)": 1.068,
+        "Pna21 (loso)": 0.967,
+        "R-3c (loso)": 1.079,
+        "P63/mmc (loso)": 1.048,
+        "Ia-3 (loso)": 1.074,
+        "Fd-3m (loso)": 1.09
+      }
+    },
+    "H5c_bandgap": {
+      "verdict": "supported",
+      "n_families": 7,
+      "n_harmed": 6,
+      "rho": {
+        "P63/mmc (l2o)": 1.717,
+        "C2/m (loso)": 1.604,
+        "Pna21 (loso)": 1.695,
+        "R-3c (loso)": 2.228,
+        "P63/mmc (loso)": 1.634,
+        "Ia-3 (loso)": 2.72,
+        "Fd-3m (loso)": 1.074
+      },
+      "mean_cov_new": {
+        "P63/mmc (l2o)": 0.879,
+        "C2/m (loso)": 0.841,
+        "Pna21 (loso)": 0.849,
+        "R-3c (loso)": 0.847,
+        "P63/mmc (loso)": 0.879,
+        "Ia-3 (loso)": 0.809,
+        "Fd-3m (loso)": 0.898
+      }
+    },
+    "H5c_formation": {
+      "verdict": "supported",
+      "n_families": 7,
+      "n_harmed": 4,
+      "rho": {
+        "P63/mmc (l2o)": 1.061,
+        "C2/m (loso)": 1.561,
+        "Pna21 (loso)": 1.692,
+        "R-3c (loso)": 1.797,
+        "P63/mmc (loso)": 1.05,
+        "Ia-3 (loso)": 3.001,
+        "Fd-3m (loso)": 1.198
+      },
+      "mean_cov_new": {
+        "P63/mmc (l2o)": 0.898,
+        "C2/m (loso)": 0.866,
+        "Pna21 (loso)": 0.883,
+        "R-3c (loso)": 0.85,
+        "P63/mmc (loso)": 0.897,
+        "Ia-3 (loso)": 0.761,
+        "Fd-3m (loso)": 0.915
+      }
+    }
+  },
+  "H5b": {
+    "bandgap": {
+      "verdict": "supported",
+      "n_cells": 5,
+      "n_pass": 5,
+      "needed": 4,
+      "n_ratio_gt_reject": 0
+    },
+    "formation": {
+      "verdict": "supported",
+      "n_cells": 6,
+      "n_pass": 6,
+      "needed": 5,
+      "n_ratio_gt_reject": 0
+    }
+  }
+}

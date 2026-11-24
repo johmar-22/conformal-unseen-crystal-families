@@ -1,0 +1,54 @@
+{
+  "bandgap": {
+    "H4_supported": false,
+    "H4_detail": {
+      "diff": 0.3544,
+      "diff_lo": 0.295,
+      "diff_hi": 0.4166,
+      "best_distance": 0.4342
+    },
+    "G4_triggered": true,
+    "pooled_auroc": {
+      "width": 0.08,
+      "knn": 0.434,
+      "kde": 0.404,
+      "committee": 0.15,
+      "subsample": 0.181,
+      "classifier": 0.549
+    },
+    "within_weighted_auroc": {
+      "width": 0.534,
+      "knn": 0.404,
+      "kde": 0.401,
+      "committee": 0.563,
+      "subsample": 0.476,
+      "classifier": 0.546
+    }
+  },
+  "formation": {
+    "H4_supported": false,
+    "H4_detail": {
+      "diff": 0.3475,
+      "diff_lo": 0.2948,
+      "diff_hi": 0.4128,
+      "best_distance": 0.4295
+    },
+    "G4_triggered": true,
+    "pooled_auroc": {
+      "width": 0.082,
+      "knn": 0.429,
+      "kde": 0.403,
+      "committee": 0.386,
+      "subsample": 0.445,
+      "classifier": 0.62
+    },
+    "within_weighted_auroc": {
+      "width": 0.388,
+      "knn": 0.448,
+      "kde": 0.465,
+      "committee": 0.437,
+      "subsample": 0.581,
+      "classifier": 0.594
+    }
+  }
+}

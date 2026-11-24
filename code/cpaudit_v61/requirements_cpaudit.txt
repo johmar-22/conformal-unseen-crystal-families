@@ -1,0 +1,8 @@
+# installed automatically by cpaudit_run_v6.py when missing
+pyyaml
+tabulate
+pymatgen          # structures, oxidation states, space groups
+matminer          # installed with --no-deps (its pins would change Colab's pandas/scikit-learn)
+MatFold           # installed with --no-deps (needs only numpy, pandas, pymatgen)
+crepes            # self-test cross-check only (--no-deps)
+mapie==0.8.6      # self-test cross-check only (--no-deps)
